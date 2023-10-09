@@ -1,10 +1,10 @@
-local colors                 = require "material.colors"
-local settings               = require "material.util.config".settings
-local plugins                = require "material.highlights.plugins"
+local colors                 = require "flexoki-material.colors"
+local settings               = require "flexoki-material.util.config".settings
+local plugins                = require "flexoki-material.highlights.plugins"
 local styles                 = settings.styles
 
 -- apply conditional colors
-colors                       = require "material.colors.conditionals"
+colors                       = require "flexoki-material.colors.conditionals"
 
 local m                      = colors.main
 local e                      = colors.editor
@@ -32,16 +32,16 @@ M.main_highlights.syntax     = function()
     Repeat         = { fg = s.keyword },
     String         = { fg = s.string },
     Type           = { fg = s.type },
-    StorageClass   = { fg = s.storage },       -- static, register, volatile, etc.
+    StorageClass   = { fg = s.storage },   -- static, register, volatile, etc.
     Structure      = { fg = s.type },
-    SpecialComment = { link = "Comment" },     -- special things inside a comment
+    SpecialComment = { link = "Comment" }, -- special things inside a comment
     Constant       = { fg = m.yellow },
     Number         = { fg = s.value },
     Character      = { link = "Number" },
     Boolean        = { link = "Number" },
     Float          = { link = "Number" },
     Statement      = { fg = m.cyan },
-    Label          = { fg = s.keyword },     -- case, default, etc.
+    Label          = { fg = s.keyword }, -- case, default, etc.
     Operator       = { fg = s.operator },
     Exception      = { fg = m.red },
     Macro          = { fg = m.cyan },
@@ -53,7 +53,7 @@ M.main_highlights.syntax     = function()
     Special        = { fg = m.cyan },
     SpecialChar    = { fg = m.red },
     Tag            = { fg = m.red },
-    Delimiter      = { fg = s.operator },     -- ;
+    Delimiter      = { fg = s.operator }, -- ;
     Debug          = { fg = m.red },
     htmlLink       = { fg = e.link, underline = true },
     -- htmlH1         = { fg = m.cyan, bold = true },
@@ -185,11 +185,11 @@ M.main_highlights.editor     = function()
   local editor_hls = {
     Normal           = { fg = e.fg, bg = e.bg },
     NormalFloat      = { fg = e.fg, bg = b.floating_windows },
-    NormalContrast   = { fg = e.fg, bg = e.bg_alt },     -- a help group for contrast fileypes
+    NormalContrast   = { fg = e.fg, bg = e.bg_alt }, -- a help group for contrast fileypes
     ColorColumn      = { fg = m.none, bg = e.active },
     Conceal          = { fg = e.disabled },
     Cursor           = { fg = e.bg_alt, bg = e.cursor },
-    CursorIM         = { link = "Cursor" },     -- like Cursor, but used when in IME mode
+    CursorIM         = { link = "Cursor" }, -- like Cursor, but used when in IME mode
     ErrorMsg         = { fg = l.error },
     Folded           = { fg = e.disabled, bg = e.bg_alt, italic = true },
     FoldColumn       = { fg = m.blue },
@@ -199,7 +199,7 @@ M.main_highlights.editor     = function()
     DiffChange       = { fg = g.modified },
     DiffDelete       = { fg = g.removed, reverse = true },
     DiffText         = { fg = g.modified, reverse = true },
-    ModeMsg          = { fg = e.accent },     -- 'showmode' message (e.g., "-- INSERT -- ")
+    ModeMsg          = { fg = e.accent }, -- 'showmode' message (e.g., "-- INSERT -- ")
     NonText          = { fg = e.disabled },
     SignColumn       = { fg = e.fg },
     SpecialKey       = { fg = m.purple },
@@ -238,19 +238,19 @@ M.async_highlights.editor    = function()
     healthSuccess = { fg = m.yellow },
     healthWarning = { fg = m.yellow },
     Visual        = { fg = m.none, bg = e.selection },
-    VisualNOS     = { link = "Visual" },     -- Visual mode selection when vim is "Not Owning the Selection".
+    VisualNOS     = { link = "Visual" }, -- Visual mode selection when vim is "Not Owning the Selection".
     Directory     = { fg = m.blue },
     MatchParen    = { fg = m.yellow, bold = true },
     IncSearch     = { fg = e.title, underline = true, reverse = true },
-    Question      = { fg = m.yellow },     -- |hit-enter| prompt and yes/no questions
+    Question      = { fg = m.yellow }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine  = { fg = e.highlight, bg = e.title, reverse = true },
     Search        = { fg = e.title, bold = true, reverse = true },
     MoreMsg       = { fg = e.accent },
-    Pmenu         = { fg = e.fg, bg = e.border },           -- popup menu
-    PmenuSel      = { fg = e.contrast, bg = e.accent },     -- Popup menu: selected item.
+    Pmenu         = { fg = e.fg, bg = e.border },       -- popup menu
+    PmenuSel      = { fg = e.contrast, bg = e.accent }, -- Popup menu: selected item.
     PmenuSbar     = { bg = e.active },
     PmenuThumb    = { fg = e.fg },
-    WildMenu      = { fg = m.orange, bold = true },     -- current match in 'wildmenu' completion
+    WildMenu      = { fg = m.orange, bold = true }, -- current match in 'wildmenu' completion
     VertSplit     = { fg = e.vsplit },
     WinSeparator  = { fg = e.vsplit },
     diffAdded     = { fg = g.added },
@@ -305,7 +305,7 @@ M.async_highlights.load_lsp  = function()
     DiagnosticFloatingHint                   = { link = "DiagnosticHint" },
     DiagnosticSignHint                       = { link = "DiagnosticHint" },
     DiagnosticUnderlineHint                  = { undercurl = true, sp = l.hint },
-    LspReferenceText                         = { bg = e.selection }, -- used for highlighting "text" references
+    LspReferenceText                         = { bg = e.selection },          -- used for highlighting "text" references
     LspReferenceRead                         = { link = "LspReferenceText" }, -- used for highlighting "read" references
     LspReferenceWrite                        = { link = "LspReferenceText" }, -- used for highlighting "write" references
     LspCodeLens                              = { link = "DiagnosticHint" },

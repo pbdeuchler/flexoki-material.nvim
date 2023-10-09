@@ -1,4 +1,4 @@
-local high_visibility                  = require "material.util.config".settings.high_visibility
+local high_visibility                  = require "flexoki-material.util.config".settings.high_visibility
 
 ---colors table
 local colors                           = {
